@@ -1,7 +1,7 @@
 # PSU Alerts & Notifications — SE495 Prototype
 
 Campus alerts and notifications prototype for Prince Sultan University
-(course project, *Emerging Topics: AI in Software Engineering*).
+(course project for SE495).
 
 > **Prototype only.** Synthetic data, simulated delivery, local deployment.
 > No real student, faculty or staff information is stored in this repository.
