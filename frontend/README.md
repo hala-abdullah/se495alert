@@ -1,17 +1,36 @@
-# psu_alerts_app
+# PSU Alerts — Flutter frontend
 
-A new Flutter project.
+Flutter client for the PSU Alerts & Notifications prototype (Student 2).
+Runs in Chrome and uses fake data from `lib/data.dart`.
 
-## Getting Started
+## Run
 
-This project is a starting point for a Flutter application.
+```bash
+flutter pub get
+flutter run -d chrome     # r = reload, R = restart, q = quit
+flutter test              # widget tests UI-1 … UI-10
+```
 
-A few resources to get you started if this is your first Flutter project:
+## Test accounts (password `1234`)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+| Email | Login tab | Role | Home screen |
+|-------|-----------|------|-------------|
+| student@psu.test | Student | Student | Recent Alert + Past Alerts |
+| faculty@psu.test | Faculty | Faculty | New Alert + Sent Alerts (Medium/Low) |
+| admin@psu.test | Faculty | Admin | New Alert + Sent Alerts (High/Medium/Low) |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Files
+
+| File | Purpose |
+|------|---------|
+| `lib/main.dart` | App entry: title, theme, English/Arabic and right-to-left |
+| `lib/data.dart` | Fake accounts, `Alert` class, fake alerts |
+| `lib/widgets.dart` | Shared top bar (en/ar button), headings, ✓ acknowledge button |
+| `lib/translations.dart` | English → Arabic text and the `tr()` helper |
+| `lib/screens/login_page.dart` | Login with Student / Faculty tabs |
+| `lib/screens/student_home.dart` | Recent Alert, Past Alerts, ✓ and comments |
+| `lib/screens/alert_page.dart` | Alert details, ✓, comments |
+| `lib/screens/preferences_page.dart` | Email / SMS / Push switches |
+| `lib/screens/staff_home.dart` | + New Alert, Sent Alerts with views |
+| `lib/screens/create_alert.dart` | Title, message, severity, course, section, send |
+| `test/widget_test.dart` | Widget tests UI-1 … UI-10 |
